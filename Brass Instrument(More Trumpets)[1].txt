@@ -1,0 +1,17 @@
+ TIMESTAMP IN PORT STATUS DATA1 DATA2 CHAN NOTE EVENT               
+ 000F8158   1   2     92    18    6E    3  C  1 Note On               
+ 000F8158   1   3     92    18    6E    3  C  1 Note On               
+ 000F81E8   1   2     82    18    00    3  C  1 Note Off              
+ 000F81E8   1   3     82    18    00    3  C  1 Note Off              
+ 000F839A   1   2     91    37    6E    2  G  3 Note On               
+ 000F839A   1   3     91    37    6E    2  G  3 Note On               
+ 000F8422   1   2     81    37    00    2  G  3 Note Off              
+ 000F8422   1   3     81    37    00    2  G  3 Note Off              
+ 000F85C5   1   2     91    48    6E    2  C  5 Note On               
+ 000F85C5   1   3     91    48    6E    2  C  5 Note On               
+ 000F862A   1   2     81    48    00    2  C  5 Note Off              
+ 000F862A   1   3     81    48    00    2  C  5 Note Off              
+ 000F8843   1   2     91    52    6E    2  Bb 5 Note On               
+ 000F8843   1   3     91    52    6E    2  Bb 5 Note On               
+ 000F88BC   1   2     81    52    00    2  Bb 5 Note Off              
+ 000F88BC   1   3     81    52    00    2  Bb 5 Note Off              
