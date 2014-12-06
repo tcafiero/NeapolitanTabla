@@ -33,99 +33,102 @@ void loop()
     note = midiA.getData1();
     data2 = midiA.getData2();
     channel = midiA.getChannel();
-    switch (channel)
+    if ((type == midi::NoteOff) || (type == midi::NoteOn))
     {
-      case 0x2:  switch (note)
-        {
-          case 0x37:
-            note = 0x2B;
-            channel = 0x2;
-            break;
-          case 0x48:
-            note = 0x3C;
-            channel = 0x2;
-            break;
-          case 0x52:
-            note = 0x46;
-            channel = 0x2;
-            break;
-          case 0x60:
-            note = 0x54;
-            channel = 0x5;
-            break;
-          default: break;
-        };
-        break;
-      case 0x3:  switch (note)
-        {
-          case 0x18:
-            note = 0x0C;
-            channel = 0x2;
-            break;
-          case 0x37:
-            note = 0x2A;
-            channel = 0x3;
-            break;
-          case 0x3C:
-            note = 0x30;
-            channel = 0x3;
-            break;
-          case 0x48:
-            note = 0x3C;
-            channel = 0x3;
-            break;
-          default: break;
-        };
-        break;
-      case 0x4:  switch (note)
-        {
-          case 0x11:
-            note = 0x04;
-            channel = 0x4;
-            break;
-          case 0x13:
-            note = 0x07;
-            channel = 0x4;
-            break;
-          case 0x24:
-            note = 0x18;
-            channel = 0x4;
-            break;
-          case 0x30:
-            note = 0x24;
-            channel = 0x5;
-            break;
-          default: break;
-        };
-        break;
-      case 0x5:  switch (note)
-        {
-          case 0x30:
-            note = 0x24;
-            channel = 0x3;
-            break;
-          case 0x3E:
-            note = 0x32;
-            channel = 0x5;
-            break;
-          case 0x4E:
-            note = 0x42;
-            channel = 0x5;
-            break;
-          default: break;
-        };
-        break;
-      case 0xC:
-        switch (note)
-        {
-          case 0x0C:
-            note = 0x00;
-            channel = 0x4;
-            break;
-          default: break;
-        };
-        break;
-      default: break;
+      switch (channel)
+      {
+        case 0x2:  switch (note)
+          {
+            case 0x37:
+              note = 0x2B;
+              channel = 0x2;
+              break;
+            case 0x48:
+              note = 0x3C;
+              channel = 0x2;
+              break;
+            case 0x52:
+              note = 0x46;
+              channel = 0x2;
+              break;
+            case 0x60:
+              note = 0x54;
+              channel = 0x5;
+              break;
+            default: break;
+          };
+          break;
+        case 0x3:  switch (note)
+          {
+            case 0x18:
+              note = 0x0C;
+              channel = 0x2;
+              break;
+            case 0x37:
+              note = 0x2A;
+              channel = 0x3;
+              break;
+            case 0x3C:
+              note = 0x30;
+              channel = 0x3;
+              break;
+            case 0x48:
+              note = 0x3C;
+              channel = 0x3;
+              break;
+            default: break;
+          };
+          break;
+        case 0x4:  switch (note)
+          {
+            case 0x11:
+              note = 0x04;
+              channel = 0x4;
+              break;
+            case 0x13:
+              note = 0x07;
+              channel = 0x4;
+              break;
+            case 0x24:
+              note = 0x18;
+              channel = 0x4;
+              break;
+            case 0x30:
+              note = 0x24;
+              channel = 0x5;
+              break;
+            default: break;
+          };
+          break;
+        case 0x5:  switch (note)
+          {
+            case 0x30:
+              note = 0x24;
+              channel = 0x3;
+              break;
+            case 0x3E:
+              note = 0x32;
+              channel = 0x5;
+              break;
+            case 0x4E:
+              note = 0x42;
+              channel = 0x5;
+              break;
+            default: break;
+          };
+          break;
+        case 0xC:
+          switch (note)
+          {
+            case 0x0C:
+              note = 0x00;
+              channel = 0x4;
+              break;
+            default: break;
+          };
+          break;
+        default: break;
+      };
     };
     // Thru on A has already pushed the input message to out A.
     // Forward the message to out B as well.
