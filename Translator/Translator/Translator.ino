@@ -162,8 +162,9 @@ void loop()
             data1 = 76 - 1; //Pan Flute
             break;
           case 10:
-            data1 = 128 - 1;
-            data2 = 3;    //Explosion
+            midiA.send(midi::ControlChange,0,121,10);
+            midiA.send(midi::ControlChange,0x20,3,10);
+            data1 = 128 - 1;  //Explosion
             break;
           default: break;
         };
