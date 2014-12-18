@@ -40,92 +40,92 @@ void loop()
         {
           switch (channel)
           {
-            case 0x2:  switch (data1)
+            case 2:  switch (data1)
               {
                 case 0x37:
                   data1 = 0x2B;
-                  channel = 0x2;
+                  channel = 2;
                   break;
                 case 0x48:
                   data1 = 0x3C;
-                  channel = 0x2;
+                  channel = 2;
                   break;
                 case 0x52:
-                  data1 = 0x46;
-                  channel = 0x2;
+                  data1 = 0x18;
+                  channel = 10;
                   break;
                 case 0x60:
                   data1 = 0x54;
-                  channel = 0x5;
+                  channel = 5;
                   break;
                 default: break;
               };
               break;
-            case 0x3:  switch (data1)
+            case 3:  switch (data1)
               {
                 case 0x18:
-                  data1 = 0x0C;
-                  channel = 0x2;
+                  data1 = 0x18;
+                  channel = 2;
                   break;
                 case 0x37:
-                  data1 = 0x2A;
-                  channel = 0x3;
+                  data1 = 0x2B;
+                  channel = 3;
                   break;
                 case 0x3C:
                   data1 = 0x30;
-                  channel = 0x3;
+                  channel = 3;
                   break;
                 case 0x48:
                   data1 = 0x3C;
-                  channel = 0x3;
+                  channel = 3;
                   break;
                 default: break;
               };
               break;
-            case 0x4:  switch (data1)
+            case 4:  switch (data1)
               {
                 case 0x11:
-                  data1 = 0x04;
-                  channel = 0x4;
+                  data1 = 0x28;
+                  channel = 4;
                   break;
                 case 0x13:
-                  data1 = 0x07;
-                  channel = 0x4;
+                  data1 = 0x2B;
+                  channel = 4;
                   break;
                 case 0x24:
-                  data1 = 0x18;
-                  channel = 0x4;
+                  data1 = 0x30;
+                  channel = 4;
                   break;
                 case 0x30:
                   data1 = 0x24;
-                  channel = 0x5;
+                  channel = 5;
                   break;
                 default: break;
               };
               break;
-            case 0x5:  switch (data1)
+            case 5:  switch (data1)
               {
                 case 0x30:
                   data1 = 0x24;
-                  channel = 0x3;
+                  channel = 3;
                   break;
                 case 0x3E:
                   data1 = 0x32;
-                  channel = 0x5;
+                  channel = 5;
                   break;
                 case 0x4E:
                   data1 = 0x42;
-                  channel = 0x5;
+                  channel = 5;
                   break;
                 default: break;
               };
               break;
-            case 0xC:
+            case 12:
               switch (data1)
               {
                 case 0x0C:
-                  data1 = 0x00;
-                  channel = 0x4;
+                  data1 = 0x24;
+                  channel = 4;
                   break;
                 default: break;
               };
@@ -137,8 +137,33 @@ void loop()
       case midi::ProgramChange:
         switch (channel)
         {
+          case 1:
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+          case 11:
+          case 12:
+          case 13:
+          case 14:
+          case 15:
+          case 16:
+            break;
+          case 2:
+            data1 = 61 - 1; //French Horn
+            break;
+          case 3:
+            data1 = 43 - 1; //Cello
+            break;
+          case 4:
+            data1 = 48 - 1; //Timpani
+            break;
           case 5:
-            data1 = 75;
+            data1 = 76 - 1; //Pan Flute
+            break;
+          case 10:
+            data1 = 128 - 1;
+            data2 = 3;    //Explosion
             break;
           default: break;
         };
