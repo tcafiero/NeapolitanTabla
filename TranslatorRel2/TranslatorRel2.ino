@@ -31,10 +31,10 @@ void loop()
     switch (type)
     {
       case midi::NoteOff:
-        if (data2 != 0x00) break;
+//        if (data2 != 0x00) break;
       case midi::NoteOn:
-        if (data2 != 0x6E) break;
-        {
+//       if (0) break;
+//        {
           switch (channel)
           {
             case 1:  switch	(data1)
@@ -207,6 +207,7 @@ void loop()
                 case 0x3C:
                 case 0x40:
                 case 0x45:
+                case 0x43:
                 case 0x48:
                 case 0x4E:
                   midiA.send(type, data1, data2, channel);
@@ -227,7 +228,7 @@ void loop()
               break;
             default: break;
           };
-        };
+//        };
         break;
       case midi::ProgramChange:
         switch (channel)
@@ -253,10 +254,10 @@ void loop()
             data1 = 43 - 1; //Cello
             midiA.send(type, data1, data2, channel);
             break;
-//          case 4:
-//            data1 = 48 - 1; //Timpani
-//            midiA.send(type, data1, data2, channel);
-//            break;
+          case 4:
+            data1 = 48 - 1; //Timpani
+            midiA.send(type, data1, data2, channel);
+            break;
           case 5:
             data1 = 76 - 1; //Pan Flute
             midiA.send(type, data1, data2, channel);
